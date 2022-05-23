@@ -1,0 +1,14 @@
+<div class = "container">
+    <div *ngIf="selectedItems>0"> Selected {{selectedItems}}</div>
+    <div *ngIf="isDownloadAvailable"> Download selected</div>
+</div>
+<ag-grid-angular
+    style="width: 100%; height: 500px;"
+    class="ag-theme-alpine"
+    [rowData]="gridOptions.rowData" 
+    [columnDefs]="gridOptions.columnDefs" 
+    [rowSelection]= "gridOptions.rowSelection"
+    [domLayout] = "gridOptions.domLayout"
+    (rowSelected)="onRowSelected($event)"
+    (selectionChanged) = "onSelectionChanged($event)">
+</ag-grid-angular>
