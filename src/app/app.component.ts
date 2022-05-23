@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ColDef, GridOptions } from 'ag-grid-community';
+import { DataList } from 'src/Models/dataList';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,9 @@ import { ColDef, GridOptions } from 'ag-grid-community';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  public customGridOptions:GridOptions = {};
-  public columnDefs:ColDef[]=[];
-  public rowData=[];
+  public customGridOptions:GridOptions;
+  public columnDefs:ColDef[];
+  public rowData:DataList[]=[];
   
   public ngOnInit(){
      this.rowData = [
